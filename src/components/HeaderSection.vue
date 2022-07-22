@@ -8,9 +8,12 @@
         </figure>
         <nav>
             <ul>
-                <li><a v-for="link in data.data" 
+                <li><a v-for="(link, key) in data.data" 
                     v-bind:key="link.text" 
-                    :href="link.url" >{{ link.text }}</a></li>               
+                    :href="link.url" 
+                    :class="{current: link.current}"
+                    @mouseover="setCurrent(key)">
+                    {{ link.text }}</a></li>               
                 
             </ul>
         </nav>
@@ -26,7 +29,12 @@ export default {
     data() {
    return {
     data,
-   }}}
+   }},
+   methods:{
+    setCurrent(key){
+        this.data.data[key].current === true;
+    }
+   }}
 
 </script>
 
@@ -55,5 +63,8 @@ ul>li>a{
     margin: 0 20px;
     font-size: 0.9rem;
     font-weight: bold;
+}
+ul>li:hover>a.current{
+    color: #0282F9;
 }
 </style>

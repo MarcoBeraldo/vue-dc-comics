@@ -4,17 +4,22 @@
   <div id="app">
     
     <HeaderSection />
+    <MainSection />
+    <BlueBar/>
   </div>
     
 </template>
 
 <script>
   import HeaderSection from "./components/HeaderSection.vue";
+  import MainSection from "./components/MainSection.vue";
+  import BlueBar from "./components/BlueBar.vue";
 export default {
   name:"App",
   components: {
-    HeaderSection,
-  
+    HeaderSection, 
+    MainSection, 
+    BlueBar,
 }}
 </script>
 
