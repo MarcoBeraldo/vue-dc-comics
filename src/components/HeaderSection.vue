@@ -1,10 +1,11 @@
 <template>
-  <div id="app">
-
-  </div>
+  <section id="header">
+    
+  </section>
 </template>
 
 <script>
+import '../assets/data/data';
 export default {
 
 }
