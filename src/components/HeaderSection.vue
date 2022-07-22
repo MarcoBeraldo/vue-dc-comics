@@ -8,8 +8,9 @@
         </figure>
         <nav>
             <ul>
-                <li v-for="link in data" 
-                v-bind:key="link.text">{{ link.text }}</li>
+                <li><a v-for="link in data.data" 
+                    v-bind:key="link.text" 
+                    :href="link.url" >{{ link.text }}</a></li>               
                 
             </ul>
         </nav>
@@ -19,7 +20,7 @@
 </template>
 
 <script>
-import data from "../assets/data/data";
+import data from "../assets/data/data.js";
 export default {
     name: "HeaderSection",
     data() {
@@ -48,7 +49,9 @@ ul{
     display: flex;
 }
 
-ul>li{
+ul>li>a{
+    color:black;
+    text-decoration: none;
     margin: 0 20px;
     font-size: 0.9rem;
     font-weight: bold;
