@@ -44,7 +44,7 @@ export default {
 }
 
 .container{
-    max-width: 1600px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 .container>div{
