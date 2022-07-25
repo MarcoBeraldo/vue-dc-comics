@@ -4,34 +4,10 @@
         <div class="container">
             <div>
 
-                <figure>
-                    <img src="../assets/img/buy-comics-digital-comics.png" alt="">
+                <figure v-for="(image, index) in blueBarImages" :key="index">
+                    <img :src="image.src" :alt="image.text">
                     <figcaption>
-                        DIGITAL COMICS
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img src="../assets/img/buy-comics-merchandise.png" alt="">
-                    <figcaption>
-                        DIGITAL COMICS
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img src="../assets/img/buy-comics-subscriptions.png" alt="">
-                    <figcaption>
-                        DIGITAL COMICS
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img src="../assets/img/buy-comics-shop-locator.png" alt="">
-                    <figcaption>
-                        DIGITAL COMICS
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img src="../assets/img/buy-dc-power-visa.svg" alt="">
-                    <figcaption>
-                        DIGITAL COMICS
+                        {{ image.text }}
                     </figcaption>
                 </figure>
 
@@ -42,8 +18,16 @@
 </template>
 
 <script>
+import blueBarImages from "../assets/data/blueBarImages.js";
+
+
 export default {
  name: "BlueBar",
+ data(){
+    return{
+        blueBarImages,
+    }
+ }
 }
 </script>
 
@@ -75,7 +59,7 @@ figure{
 }
 
 figure>img{
-    height:100%
+    height:100%;
 }
 
 figcaption{
